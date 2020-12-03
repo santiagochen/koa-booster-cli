@@ -1,0 +1,46 @@
+{
+  "name": "koa-booster-cli",
+  "version": "1.0.0",
+  "description": "cli for create projecct with koa-booster",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "bin": {
+    "koa-booster": "./bin/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagochen/koa-booster-cli.git"
+  },
+  "keywords": [
+    "scaffold",
+    "koa",
+    "boost"
+  ],
+  "author": "santiagochen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santiagochen/koa-booster-cli/issues"
+  },
+  "homepage": "https://github.com/santiagochen/koa-booster-cli#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "ejs": "^3.1.5",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "minimatch": "^3.0.4",
+    "mkdirp": "^1.0.4",
+    "shelljs": "^0.8.4",
+    "sorted-object": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.14.0"
+  }
+}

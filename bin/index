@@ -1,0 +1,38 @@
+#! /usr/bin/env node 
+
+const program = require('commander')
+const pkg = require('../package.json');
+const version = pkg.version;
+const inqr = require('../lib/inqr')
+const genBase = '../lib/gen.';
+
+program
+  .version(version)
+  // .usage('[options] [dir]')
+  // .option('    --git', 'add .gitignore')
+  // .option('-f, --force', 'force on non-empty directory')
+
+program
+  .command('help')
+  .alias('h')
+  .description('了解koa-booster-cli模块')
+  .action(option => {
+      console.log('koa-booster-cli')
+  })
+
+//构建一个koa-booster的项目骨架
+program
+  .command('create <name>')
+  .alias('c')
+  .description('构建一个koa-booster的项目骨架')
+  .option('-f, --force', '忽略非空目录强制创建') 
+  .action((name, options) => {
+    require( (genBase + (options.framework?options.framework:'koa')) )( name, options );
+    /* inqr.create((resp)=>{
+      console.log( "inqr : ", resp )
+      require( (genBase + (options.framework?options.framework:'koa')) )( name, options );
+    }) */
+  })
+
+
+program.parse(process.argv)
