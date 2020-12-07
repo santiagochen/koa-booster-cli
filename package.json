@@ -1,6 +1,6 @@
 {
   "name": "koa-booster-cli",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "cli for create projecct with koa-booster",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "lib": "lib"
   },
   "bin": {
-    "koa-booster": "./bin/index"
+    "koa-booster": "./bin/index",
+    "kb": "./bin/index"
   },
   "repository": {
     "type": "git",

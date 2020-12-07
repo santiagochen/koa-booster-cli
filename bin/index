@@ -4,7 +4,8 @@ const program = require('commander')
 const pkg = require('../package.json');
 const version = pkg.version;
 const inqr = require('../lib/inqr')
-const genBase = '../lib/gen.';
+// const genBase = '../lib/gen.';
+const genBase = '../lib/gen.koa'
 
 program
   .version(version)
@@ -27,11 +28,20 @@ program
   .description('构建一个koa-booster的项目骨架')
   .option('-f, --force', '忽略非空目录强制创建') 
   .action((name, options) => {
-    require( (genBase + (options.framework?options.framework:'koa')) )( name, options );
+    require(genBase).create( name, options );
     /* inqr.create((resp)=>{
       console.log( "inqr : ", resp )
-      require( (genBase + (options.framework?options.framework:'koa')) )( name, options );
+      // require(genBase)( name, options, resp );
     }) */
+  })
+
+//构建一个koa-booster的项目骨架
+program
+  .command('generate <part> <name>')
+  .alias('g')
+  .description('生成相关模块内容')
+  .action((part, name, options) => {
+    require(genBase).generate( part, name, options );
   })
 
 

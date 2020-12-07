@@ -1,4 +1,4 @@
-module.exports = (app)=>({
+module.exports = ()=>({
   async t1(ctx){
     try {
       let data = await ctx.service.demo.t1()

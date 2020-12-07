@@ -1,6 +1,6 @@
 module.exports = ()=>{
   return async (ctx, next)=>{
-    ctx.privateMidName = "Private Mid Name"
+    //define what you want to pipe in here
     await next()
   }
 }
