@@ -14,7 +14,7 @@ module.exports = ()=>({
   async t2(ctx){
     try {
       let data = await ctx.service.demo.t2(parseInt(ctx.params.id))
-      let item = ctx.utils.helper.findWhere( ctx.config.classInfo, { id: parseInt(ctx.params.id) })
+      let item = ctx.utils.helper.find( ctx.config.classInfo, (o)=>o.id==parseInt(ctx.params.id))
       ctx.body = {
         globalMidName:ctx.globalMidName,
         privateMidName: ctx.privateMidName,

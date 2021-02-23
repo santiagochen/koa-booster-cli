@@ -1,8 +1,8 @@
 module.exports = (app)=>({
   t1(){
-    return app.utils.helper.pluck( app.config.classInfo, "name" )
+    return app.utils.helper.map( app.config.classInfo, "name" )
   },
   t2(id){
-    return app.utils.helper.findWhere( app.config.classInfo, {id: id} )
+    return app.utils.helper.find( app.config.classInfo, (o)=>o.id==id )
   }
 })
