@@ -26,6 +26,7 @@ module.exports = {
     name:"mysqlHostInput",
     type:"input",
     message: "Input Mysql Host: ",
+    default: "127.0.0.1",
     when:function(resp){
       return resp.mysql
     }
@@ -34,6 +35,7 @@ module.exports = {
     name:"mysqlPortInput",
     type:"input",
     message: "Input Mysql Port: ",
+    default: "3306",
     when:function(resp){
       return resp.mysql
     }
@@ -41,6 +43,7 @@ module.exports = {
   mysqlUserInput:{
     name:"mysqlUserInput",
     type:"input",
+    default: "root",
     message: "Input Mysql UserName: ",
     when:function(resp){
       return resp.mysql
@@ -49,6 +52,7 @@ module.exports = {
   mysqlPwdInput:{
     name:"mysqlPwdInput",
     type:"input",
+    default: "mypassword",
     message: "Input Mysql Password: ",
     when:function(resp){
       return resp.mysql
@@ -66,6 +70,7 @@ module.exports = {
     name:"redisHostInput",
     type:"input",
     message: "Input Redis Host: ",
+    default: "127.0.0.1",
     when:function(resp){
       return resp.redis
     }
@@ -73,28 +78,50 @@ module.exports = {
   redisPortInput:{
     name:"redisPortInput",
     type:"input",
+    default: "6379",
     message: "Input Redis Port: ",
     when:function(resp){
       return resp.redis
     }
   },
-  redisUserInput:{
+  /* redisUserInput:{
     name:"redisUserInput",
     type:"input",
     message: "Input Redis UserName: ",
     when:function(resp){
       return resp.redis
     }
-  },
+  }, */
   redisPwdInput:{
     name:"redisPwdInput",
     type:"input",
+    default: "mypassword",
     message: "Input Redis Password: ",
     when:function(resp){
       return resp.redis
     }
   },
-  quality: {
+  extra: {
+    name: 'extra',
+    type: 'checkbox',
+    message: 'choose other modules as you expect:',
+    choices: [
+      { name: 'koa-body', value: 'koa-body' },
+      { name: 'koa-static', value: 'koa-static' },
+      { name: 'axios', value: 'axios' },
+      { name: 'dotenv', value: 'dotenv' },
+      { name: 'knex', value: 'knex' },
+      { name: 'winston', value: 'winston' },
+    ].map(data => ({
+      name: data.name,
+      value: data.value,
+      short: `已选择了${data.value}`,
+    })),
+    when:function(resp){
+      return resp.mode == "advanced"
+    }
+  }
+  /* quality: {
     name: 'quality',
     type: 'checkbox',
     message: '代码规范与质量检查功能:',
@@ -107,7 +134,10 @@ module.exports = {
       value: data.value,
       short: `已选择了${data.value}`,
     })),
-  }
+    when:function(resp){
+      return resp.mode == "advanced"
+    }
+  } */
 
 };
 
