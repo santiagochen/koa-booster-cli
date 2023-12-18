@@ -29,10 +29,10 @@ program
   .option('-f, --force', '忽略非空目录强制创建') 
   .action((name, options) => {
     require(genBase).create( name, options );
-    /* inqr.create((resp)=>{
-      console.log( "inqr : ", resp )
+    // inqr.create((resp)=>{
+      // console.log( "inqr : ", resp )
       // require(genBase)( name, options, resp );
-    }) */
+    // })
   })
 
 //构建一个koa-booster的项目骨架
