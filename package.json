@@ -1,6 +1,6 @@
 {
   "name": "koa-booster-cli",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "cli for create projecct with koa-booster",
   "main": "index.js",
   "scripts": {
